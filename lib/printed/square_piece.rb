@@ -46,6 +46,10 @@ class SquarePiece < SolidRuby::Printed
     end
     if @divet
       res -= sphere(d: @w/2.0)
+      top_s = sphere(d: @w/2.0)
+      top_s = top_s.translate(z: @h) if @tall
+      top_s = top_s.translate(z: @h)
+      res -= top_s
     end
 
     res

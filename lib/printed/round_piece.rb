@@ -24,6 +24,10 @@ class RoundPiece < SolidRuby::Printed
 
     if @divet
       res -= sphere(d: @d/2.0)
+      top_s = sphere(d: @d/2.0)
+      top_s = top_s.translate(z: @h) if @tall
+      top_s = top_s.translate(z: @h)
+      res -= top_s
     end
 
     res
